@@ -50,6 +50,7 @@ module.exports = class extends Command {
 				`**❯ Game:** ${member.user.presence.game || 'Not playing a game.'}`,
 				`\u200b`
 			])
+			.setFooter('❤️ By Sardine (who makes terrible and awesome things.)')
 			.addField('Member', [
 				`**❯ Highest Role:** ${member.roles.highest.id === message.guild.id ? 'None' : member.roles.highest.name}`,
 				`**❯ Server Join Date:** ${moment(member.joinedAt).format('LL LTS')}`,

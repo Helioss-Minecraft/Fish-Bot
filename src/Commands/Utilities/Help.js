@@ -17,7 +17,7 @@ module.exports = class extends Command {
 			.setColor('BLUE')
 			.setAuthor(`${message.guild.name} Help Menu`, message.guild.iconURL({ dynamic: true }))
 			.setThumbnail(this.client.user.displayAvatarURL())
-			.setFooter(`Requested by ${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
+			.setFooter('❤️ By Sardine (who makes terrible and awesome things.)')
 			.setTimestamp();
 
 		if (command) {
@@ -41,7 +41,7 @@ module.exports = class extends Command {
 				`Command Parameters: \`<>\` is strict & \`[]\` is optional`
 			]);
 			let categories;
-			if (!this.client.owners.includes(message.author.id)) {
+			if (message.author.id == 621874860544622605) {
 				categories = this.client.utils.removeDuplicates(this.client.commands.filter(cmd => cmd.category !== 'Owner').map(cmd => cmd.category));
 			} else {
 				categories = this.client.utils.removeDuplicates(this.client.commands.map(cmd => cmd.category));

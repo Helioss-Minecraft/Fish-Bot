@@ -63,6 +63,7 @@ module.exports = class extends Command {
 				`**❯ Time Created:** ${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
 				'\u200b'
 			])
+			.setFooter('❤️ By Sardine (who makes terrible and awesome things.)')
 			.addField('Statistics', [
 				`**❯ Role Count:** ${roles.length}`,
 				`**❯ Emoji Count:** ${emojis.size}`,

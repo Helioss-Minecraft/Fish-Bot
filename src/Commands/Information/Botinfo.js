@@ -32,6 +32,7 @@ module.exports = class extends Command {
 				`**❯ Discord.js:** v${djsversion}`,
 				'\u200b'
 			])
+			.setFooter('❤️ By Sardine (who makes terrible and awesome things.)')
 			.addField('System', [
 				`**❯ Platform:** ${process.platform}`,
 				`**❯ Uptime:** ${ms(os.uptime() * 1000, { long: true })}`,

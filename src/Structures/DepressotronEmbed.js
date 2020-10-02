@@ -40,6 +40,7 @@ module.exports = class DepressotronEmbed extends MessageEmbed {
 			this.fields.push({ name: title, value: content.trim().slice(0, x), inline: false });
 			content = content.slice(x + 1);
 			title = ZWS;
+			this.setFooter('❤️ By Sardine (who makes terrible and awesome things.)')
 		}
 		return this;
 	}

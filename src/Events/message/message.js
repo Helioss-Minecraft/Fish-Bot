@@ -64,6 +64,7 @@ module.exports = class extends Event {
 
 		const prefix = message.content.match(mentionRegexPrefix) ?
 			message.content.match(mentionRegexPrefix)[0] : this.client.prefix;
+		if(!message.content.startsWith(prefix)) return;
 
 		if (message.content.includes("Server Crash Detected")) {
 			// message.channel.send("test detected crash :D")
@@ -109,14 +110,14 @@ module.exports = class extends Event {
 
 			wait(1000)
 			// options is optional
-			glob("./*.txt", function (er, files) {
+			glob("crash-reports/*.txt", function (er, files) {
   			// files is an array of filenames.
   			// If the `nonull` option is set, and nothing
   			// was found, then files is ["**/*.js"]
   			// er is an error object or null.
 				thefile = files[0];
-				// console.log(thefile)
-				// console.log(files)
+				console.log(thefile)
+				console.log(files)
 				// console.log(er)
 				const attachment = new MessageAttachment('./' + thefile);
 				message.client.channels.cache.get('732258457721503764').send("Server " + findServer(message.author.id) + " crashed, here is the crash report!", attachment);
