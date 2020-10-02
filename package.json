@@ -1,0 +1,20 @@
+{
+  "name": "tutorials",
+  "version": "1.0.0",
+  "main": "src/index",
+  "author": "Connor Moriarty",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-tesseract": "^0.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "diff": "^4.0.2",
+    "discord.js": "^12.2.0",
+    "downloadjs": "^1.4.7",
+    "glob": "^7.1.6",
+    "moment": "^2.29.0",
+    "pterodactyl.js": "^2.1.1"
+  }
+}
