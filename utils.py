@@ -1,5 +1,8 @@
-import requests, os, sys
-import json, bs4, re, datetime
+from nbtlib import Byte
+import nbtlib
+import requests, os
+import json
+# from mcuuid.api import GetPlayerData
 
 nodes = {
     "london": "http://ovh.helioss.co:1111/",
@@ -45,6 +48,24 @@ ids = {
     "DDSSEU": "92a2c592-1c54-4e6e-aa89-8a2c777d5f6b"
 }
 
+def getUUID(playername):
+    r = requests.get("https://playerdb.co/api/player/minecraft/" + playername)
+    loads = json.loads(r.content)
+    if loads['data']['player']['id']:
+        return loads['data']['player']['id']
+    else:
+        return False
+    # data = GetPlayerData(playername)
+    # if data.valid:
+    #     return data.uuid
+    # else:
+    #     return False
+
+def getIndex(nbtfile, slot):
+    for x in range(len(nbtfile.root["Inventory"])):
+        if nbtfile.root["Inventory"][x]['Slot'] == Byte(slot):
+            return nbtfile.root["Inventory"][x]
+
 def download(url, filename, node):
 
     if node == "london":
@@ -58,60 +79,16 @@ def download(url, filename, node):
 
     r = requests.get(url, allow_redirects=True, auth=auths)
 
-    dir_path = os.getcwd()
+    dir_path = cwd = os.getcwd()
 
     open(dir_path + "/" + filename, 'wb').write(r.content)
 
-node = sys.argv[1]
-server = sys.argv[2]
-
-if node == "london":
-    serverid = londonids[server]
-    toAdd = nodes["london"]
-elif node == "canada":
-    serverid = canadaids[server]
-    toAdd = nodes["canada"]
-elif node == "germany":
-    serverid = germanyids[server]
-    toAdd = nodes["germany"]
-
-url = toAdd + serverid + "/crash-reports/"
-
-r = requests.get(url, auth=auths)
-
-if r.status_code != 404:
-    soup = bs4.BeautifulSoup(r.content, features="lxml")
-    a = soup.findAll('a')
-
-    format = "%Y-%m-%d_%H.%M"
-    datetime_obj = []
-    todl = ""
-
-    for x in range(len(a)):
-        s = a[x].contents[0]
-        # print(s)
-        match = re.search('\d{4}-\d{2}-\d{2}_\d{2}.\d{2}', s)
-        date = datetime.datetime.strptime(match.group(), format)
-        if date != None:
-            datetime_obj.append(date)
-        maxdate = max(datetime_obj)
-        if maxdate == date:
-            todl = s
-
+def upload(filename, url, node):
+    files = {'file': open(filename, 'rb')}
     if node == "london":
-        serverid = londonids[server]
-        # toAdd = nodes["london"]
+        url = nodes["london"] + url
     elif node == "canada":
-        serverid = canadaids[server]
-        # toAdd = nodes["canada"]
+        url = nodes["canada"] + url
     elif node == "germany":
-        serverid = germanyids[server]
-        # toAdd = nodes["germany"]
-
-    url = serverid + "/crash-reports/" + todl
-
-    dir_path = os.getcwd()
-
-    download(url, "crash-reports/" + todl, node)
-    # open(dir_path + "/whereisthefile.txt", 'w').write(todl)
-# print(url)
+        url = nodes["germany"] + url
+    r = requests.post(url, files=files,allow_redirects=True, auth=auths)
