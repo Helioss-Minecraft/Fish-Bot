@@ -17,8 +17,7 @@ module.exports = class Util {
 	}
 
 	get directory() {
-		// return `${path.dirname(require.main.filename)}${path.sep}`;
-		return '/home/sardine/Fish-Bot/src/'
+		return `${path.dirname(require.main.filename)}${path.sep}`;
 	}
 
 	trimArray(arr, maxLen = 10) {

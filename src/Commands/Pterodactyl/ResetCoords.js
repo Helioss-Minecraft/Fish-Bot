@@ -9,11 +9,11 @@ module.exports = class extends Command {
 		super(...args, {
 			description: 'Resets user to specified coords...',
 			category: 'Pterodactyl',
-      usage: '[node] [server] [player] [xCoord] [yCoord] [zCoord]'
+      usage: '[node] [server] [player] [xCoord] [yCoord] [zCoord] [dim]'
 		});
 	}
 
-  async run(message, [node, server, player, xCoord, yCoord, zCoord]) {
+  async run(message, [node, server, player, xCoord, yCoord, zCoord, dim]) {
 
     // function containsObject(obj, list) {
     //   var i;
@@ -27,8 +27,8 @@ module.exports = class extends Command {
     // }
 
     if (!message.member.roles.cache.find(role => role.name === 'Staff')) { message.channel.send("You are not authorized to to this!"); return; }
-    message.channel.send("Resetting player " + player + " to coords: " + xCoord + ", " + yCoord + ", " + zCoord + "...")
-    exec("python3 ../resetpos.py " + node + " " + server + " " + player + " " + xCoord + " " + yCoord + " " + zCoord, (error, stdout, stderr) => {
+    message.channel.send("Resetting player " + player + " to coords: " + xCoord + ", " + yCoord + ", " + zCoord + " " + "in dimension " + dim + "...")
+    exec("python3 ../resetpos.py " + node + " " + server + " " + player + " " + xCoord + " " + yCoord + " " + zCoord + " " + dim, (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;

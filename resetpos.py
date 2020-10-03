@@ -1,7 +1,7 @@
 import argparse
 import nbtlib
 import utils, os
-from nbtlib import Compound, Byte, String, Short
+from nbtlib import Compound, Byte, String, Short, Int
 
 def checkNode(value):
     strvalue = str(value)
@@ -23,6 +23,7 @@ parser.add_argument("player", nargs=1, type=str)
 parser.add_argument("xCoord", nargs=1, type=float)
 parser.add_argument("yCoord", nargs=1, type=float)
 parser.add_argument("zCoord", nargs=1, type=float)
+parser.add_argument("dim", nargs=1, type=int)
 args = parser.parse_args()
 
 if args.node[0] == "london":
@@ -42,6 +43,7 @@ if uuid:
     nbtfile.root["Pos"][0] = args.xCoord[0]
     nbtfile.root["Pos"][1] = args.yCoord[0]
     nbtfile.root["Pos"][2] = args.zCoord[0]
+    nbtfile.root["Dimension"] = Int(args.dim[0])
     nbtfile.save()
     print("Uploading to server...")
     utils.upload(dir_path + "/" + uuid + ".dat", serverid + "/world/playerdata/" + uuid + ".dat", args.node[0])

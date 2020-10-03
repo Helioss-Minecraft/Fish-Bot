@@ -55,6 +55,7 @@ if uuid:
     nbtfile.root["Pos"][0] = Double(xCoord)
     nbtfile.root["Pos"][1] = Double(yCoord)
     nbtfile.root["Pos"][2] = Double(zCoord)
+    nbtfile.root["Dimension"] = 0
     nbtfile.save()
     print("Uploading to server...")
     upload(dir_path + "/" + uuid + ".dat", serverid + "/world/playerdata/" + uuid + ".dat", node)
