@@ -21,8 +21,7 @@ module.exports = class extends Command {
       'method': 'GET',
       'url': 'https://panel.helioss.co/api/application/servers',
       'headers': {
-        // 'Authorization': 'Bearer ' + process.env.API_KEY,
-        'Authorization': 'Bearer zXw425lT6GC0XQ4dnt6QvqRJMJIGtulHI7r6OEWMq6NmMV3y',
+        'Authorization': 'Bearer ' + process.env.API_KEY,
         'Content-Type': 'application/json',
         'Accept': 'Application/vnd.pterodactyl.v1+json'
       }
