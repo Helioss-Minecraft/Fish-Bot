@@ -9,6 +9,8 @@ module.exports = class DepressotronClient extends Client {
 		});
 		this.validate(options);
 
+		if (!this.ids) {this.ids = [];}
+
 		this.commands = new Collection();
 
 		this.aliases = new Collection();
