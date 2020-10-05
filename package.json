@@ -16,7 +16,9 @@
     "downloadjs": "^1.4.7",
     "glob": "^7.1.6",
     "moment": "^2.29.0",
-    "pterodactyl.js": "^2.1.1",
-    "request": "^2.88.2"
+    "nodeactyl": "^2.0.3",
+    "request": "^2.88.2",
+    "sqlite": "^4.0.15",
+    "sqlite3": "^5.0.0"
   }
 }

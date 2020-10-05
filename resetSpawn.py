@@ -2,7 +2,7 @@ import argparse
 import nbtlib
 import utils, os
 from utils import *
-from nbtlib import Compound, Byte, String, Short, Double
+from nbtlib import Compound, Byte, String, Short, Double, Int
 
 def checkNode(value):
     strvalue = str(value)
@@ -55,7 +55,7 @@ if uuid:
     nbtfile.root["Pos"][0] = Double(xCoord)
     nbtfile.root["Pos"][1] = Double(yCoord)
     nbtfile.root["Pos"][2] = Double(zCoord)
-    nbtfile.root["Dimension"] = 0
+    nbtfile.root["Dimension"] = Int(0)
     nbtfile.save()
     print("Uploading to server...")
     upload(dir_path + "/" + uuid + ".dat", serverid + "/world/playerdata/" + uuid + ".dat", node)
