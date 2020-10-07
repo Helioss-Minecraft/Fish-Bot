@@ -1,14 +1,28 @@
 {
-  "name": "tutorials",
+  "name": "Fish-Bot",
   "version": "1.0.0",
-  "main": "src/index",
-  "author": "Connor Moriarty",
+  "main": "index",
+  "author": "Sardine123",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^7.0.0",
     "eslint-config-tesseract": "^0.0.2"
   },
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "node setup.js"
+  },
+  "engines": {
+    "node": ">=12"
+  },
   "dependencies": {
+    "better-sqlite3": "^6.0.1",
+    "chalk": "^4.0.0",
+    "discord.js": "^12.3.1",
+    "enmap": "^5.2.4",
+    "inquirer": "^7.1.0",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.3.2",
     "axios": "^0.20.0",
     "diff": "^4.0.2",
     "discord.js": "^12.2.0",

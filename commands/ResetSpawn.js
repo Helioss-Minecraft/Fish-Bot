@@ -1,19 +1,19 @@
-const Command = require('../../Structures/Command');
-const { MessageEmbed } = require('discord.js');
-const moment = require('moment');
 const { exec } = require("child_process");
 // const Pterodactyl = require('pterodactyl.js');
 
-module.exports = class extends Command {
-  constructor(...args) {
-		super(...args, {
+
+exports.help = {
+			name: "resetspawn",
 			description: 'Resets user to spawn (specified in level.dat)',
 			category: 'Pterodactyl',
       usage: '[node] [server] [player] '
-		});
-	}
+}
 
-  async run(message, [node, server, player]) {
+
+exports.run = async (client, message, args, level) => {
+  node = args[0]
+  server = args[1]
+  player = args[2]
 
     // function containsObject(obj, list) {
     //   var i;
@@ -26,9 +26,9 @@ module.exports = class extends Command {
     //   return false;
     // }
 
-    if (!message.member.roles.cache.find(role => role.name === 'Staff')) { message.channel.send("You are not authorized to to this!"); return; }
+    // if (!message.member.roles.cache.find(role => role.name === 'Staff')) { message.channel.send("You are not authorized to to this!"); return; }
     message.channel.send("Resetting player " + player + " to spawn...")
-    exec("python3 ../resetSpawn.py " + node + " " + server + " " + player, (error, stdout, stderr) => {
+    exec("python3 resetSpawn.py " + node + " " + server + " " + player, (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
@@ -41,4 +41,10 @@ module.exports = class extends Command {
     });
     message.channel.send("Done!")
   }
-};
+
+  exports.conf = {
+    enabled: true,
+    guildOnly: true,
+    aliases: [],
+    permLevel: "Moderator"
+  };
