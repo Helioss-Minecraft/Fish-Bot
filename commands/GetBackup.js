@@ -1,19 +1,13 @@
-const Command = require('../../Structures/Command');
-const { MessageEmbed } = require('discord.js');
-const moment = require('moment');
 const { exec } = require("child_process");
 // const Pterodactyl = require('pterodactyl.js');
 
-module.exports = class extends Command {
-  constructor(...args) {
-		super(...args, {
-			description: 'Gets a backup and shoves it into /var/www/, and ',
+exports.help = {
+			name: "getbackup",
+			description: 'Gets a backup and shoves it into /var/www/, and tells you the link.',
 			category: 'Pterodactyl',
-      usage: '[node] [server] [player] [xCoord] [yCoord] [zCoord] [dim]'
-		});
-	}
-
-  async run(message, [node, server, player, xCoord, yCoord, zCoord, dim]) {
+      usage: '[uuid] [date/latest]'
+}
+exports.run = (client, message, args, level) => {
 
     // function containsObject(obj, list) {
     //   var i;
@@ -27,8 +21,8 @@ module.exports = class extends Command {
     // }
 
     if (!message.member.roles.cache.find(role => role.name === 'Staff')) { message.channel.send("You are not authorized to to this!"); return; }
-    message.channel.send("Resetting player " + player + " to coords: " + xCoord + ", " + yCoord + ", " + zCoord + " " + "in dimension " + dim + "...")
-    exec("python3 ../resetpos.py " + node + " " + server + " " + player + " " + xCoord + " " + yCoord + " " + zCoord + " " + dim, (error, stdout, stderr) => {
+    message.channel.send("Getting backup...")
+    exec("python3 getbackup " + args[0] + " " + args[1], (error, stdout, stderr) => {
       if (error) {
           console.log(`error: ${error.message}`);
           return;
@@ -41,4 +35,8 @@ module.exports = class extends Command {
     });
     message.channel.send("Done!")
   }
-};
+	exports.conf = {
+	  enabled: true,
+	  guildOnly: true,
+	  permLevel: "Moderator"
+	};
