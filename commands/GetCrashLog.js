@@ -14,7 +14,7 @@ exports.run = (client, message, args, level) => {
   node = args[0]
   server = args[1]
 
-  exec("python3 downloadlatest.py " + findNode(message.author.id) + " " + findServer(message.author.id), (error, stdout, stderr) => {
+  exec("python3 downloadlatest.py " + node + " " + server, (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
