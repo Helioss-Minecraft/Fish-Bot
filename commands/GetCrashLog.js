@@ -2,6 +2,15 @@ const { exec } = require("child_process");
 var fs = require('fs');
 // const Pterodactyl = require('pterodactyl.js');
 
+
+function wait(ms){
+  var start = new Date().getTime();
+  var end = start;
+  while(end < start + ms) {
+    end = new Date().getTime();
+  }
+}
+
 exports.help = {
 			name: "getlog",
 			description: 'Gets latest crash log for provided server and node.',
