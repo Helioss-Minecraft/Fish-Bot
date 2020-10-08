@@ -59,7 +59,7 @@ exports.run = (client, message, args, level) => {
     console.log(files)
     // console.log(er)
     const attachment = new MessageAttachment('./' + thefile);
-    message.client.channels.cache.get('732258457721503764').send("Server " + findServer(message.author.id) + " crashed, here is the crash report!", attachment);
+    message.client.channels.cache.get('732258457721503764').send("Server " + server + " crashed, here is the crash report!", attachment);
     // fs.unlinkSync("./" + thefile)
   })
 
