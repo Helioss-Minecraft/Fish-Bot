@@ -1,3 +1,7 @@
+.env src/.env node_modules config.json config.js .vscode __pycache__ configs/*.json debug.log
+.DS_Store data/*.db* config.json .ssh/ .cache .bash*
+.profile%
+
 .env
 src/.env
 node_modules
