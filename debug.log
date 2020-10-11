@@ -220,3 +220,7 @@ discord.ext.commands.errors.ExtensionFailed: Extension 'plugins.ptero' raised an
 [11/10/2020 15:22] WARNING: Ignoring exception in command ^ptero resetspawn london OmniEU Sardine123:
 [11/10/2020 15:22] INFO: Module ptero reloaded
 [11/10/2020 15:23] INFO: Module ptero reloaded
+[11/10/2020 22:29] INFO: Lancement du bot
+[11/10/2020 22:29] DEBUG: Pas d'arguments trouvés!
+[11/10/2020 22:34] INFO: Lancement du bot
+[11/10/2020 22:34] DEBUG: Pas d'arguments trouvés!

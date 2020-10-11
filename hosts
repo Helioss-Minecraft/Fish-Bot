@@ -1,0 +1,8 @@
+[nodes]
+newgermany.helioss.co
+ovh.helioss.co
+localhost
+
+[nodes:vars]
+ansible_connection=ssh
+ansible_user=sardine

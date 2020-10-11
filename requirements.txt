@@ -10,7 +10,7 @@ gitdb==4.0.5
 GitPython==3.1.9
 idna==2.10
 multidict==4.7.6
-nbtlib==1.8.1
+nbtlib
 numpy==1.19.2
 psutil==5.7.0
 python-dotenv==0.14.0
