@@ -1,0 +1,222 @@
+[11/10/2020 12:49] INFO: Lancement du bot
+[11/10/2020 12:49] ERROR: 
+Failed to load extension admin
+Traceback (most recent call last):
+  File "bot.py", line 128, in main
+    client.load_extension("plugins."+extension)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 660, in load_extension
+    spec = importlib.util.find_spec(name)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/importlib/util.py", line 94, in find_spec
+    parent = __import__(parent_name, fromlist=['__path__'])
+ModuleNotFoundError: No module named 'plugins'
+[11/10/2020 12:50] INFO: Lancement du bot
+[11/10/2020 12:50] ERROR: 
+Failed to load extension admin
+Traceback (most recent call last):
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 607, in _load_from_module_spec
+    spec.loader.exec_module(lib)
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/leo/Desktop/Leo/.apps/FishBot.py/plugins/admin.py", line 9, in <module>
+    import checks
+ModuleNotFoundError: No module named 'checks'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "bot.py", line 128, in main
+    client.load_extension("plugins."+extension)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 664, in load_extension
+    self._load_from_module_spec(spec, name)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 610, in _load_from_module_spec
+    raise errors.ExtensionFailed(key, e) from e
+discord.ext.commands.errors.ExtensionFailed: Extension 'plugins.admin' raised an error: ModuleNotFoundError: No module named 'checks'
+[11/10/2020 13:06] INFO: Lancement du bot
+[11/10/2020 13:07] DEBUG: Pas d'arguments trouvés!
+[11/10/2020 13:12] INFO: Lancement du bot
+[11/10/2020 13:12] DEBUG: Pas d'arguments trouvés!
+[11/10/2020 13:12] INFO: Lancement du bot
+[11/10/2020 13:12] DEBUG: Pas d'arguments trouvés!
+[11/10/2020 13:13] INFO: Lancement du bot
+[11/10/2020 13:13] DEBUG: Pas d'arguments trouvés!
+[11/10/2020 13:16] WARNING: Ignoring exception in command /config prefix set ^:
+[11/10/2020 13:17] INFO: Lancement du bot
+[11/10/2020 13:17] DEBUG: Pas d'arguments trouvés!
+[11/10/2020 13:18] INFO: Lancement du bot
+[11/10/2020 13:18] DEBUG: Pas d'arguments trouvés!
+[11/10/2020 13:21] INFO: Rebooting bot...
+[11/10/2020 13:21] INFO: Lancement du bot
+[11/10/2020 13:48] INFO: Rebooting bot...
+[11/10/2020 13:48] INFO: Lancement du bot
+[11/10/2020 13:48] INFO: Rebooting bot...
+[11/10/2020 13:49] INFO: Lancement du bot
+[11/10/2020 13:49] ERROR: 
+Failed to load extension ptero
+Traceback (most recent call last):
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 607, in _load_from_module_spec
+    spec.loader.exec_module(lib)
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/leo/Desktop/Leo/.apps/FishBot.py/plugins/ptero.py", line 11, in <module>
+    import nbtlib
+ModuleNotFoundError: No module named 'nbtlib'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "start.py", line 128, in main
+    client.load_extension("plugins."+extension)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 664, in load_extension
+    self._load_from_module_spec(spec, name)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 610, in _load_from_module_spec
+    raise errors.ExtensionFailed(key, e) from e
+discord.ext.commands.errors.ExtensionFailed: Extension 'plugins.ptero' raised an error: ModuleNotFoundError: No module named 'nbtlib'
+[11/10/2020 13:50] INFO: Lancement du bot
+[11/10/2020 13:50] ERROR: 
+Failed to load extension ptero
+Traceback (most recent call last):
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 607, in _load_from_module_spec
+    spec.loader.exec_module(lib)
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/leo/Desktop/Leo/.apps/FishBot.py/plugins/ptero.py", line 12, in <module>
+    import utils, os
+  File "/Users/leo/Desktop/Leo/.apps/FishBot.py/utils.py", line 3, in <module>
+    import requests, os
+ModuleNotFoundError: No module named 'requests'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "start.py", line 128, in main
+    client.load_extension("plugins."+extension)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 664, in load_extension
+    self._load_from_module_spec(spec, name)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 610, in _load_from_module_spec
+    raise errors.ExtensionFailed(key, e) from e
+discord.ext.commands.errors.ExtensionFailed: Extension 'plugins.ptero' raised an error: ModuleNotFoundError: No module named 'requests'
+[11/10/2020 13:51] INFO: Lancement du bot
+[11/10/2020 13:51] ERROR: 
+Failed to load extension ptero
+Traceback (most recent call last):
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 619, in _load_from_module_spec
+    setup(self)
+  File "/Users/leo/Desktop/Leo/.apps/FishBot.py/plugins/ptero.py", line 63, in setup
+    bot.add_cog(Ptero(bot))
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 508, in add_cog
+    cog = cog._inject(self)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/cog.py", line 395, in _inject
+    raise e
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/cog.py", line 390, in _inject
+    bot.add_command(command)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/core.py", line 1138, in add_command
+    raise CommandRegistrationError(command.name)
+discord.ext.commands.errors.CommandRegistrationError: The command admin is already an existing command or alias.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "start.py", line 128, in main
+    client.load_extension("plugins."+extension)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 664, in load_extension
+    self._load_from_module_spec(spec, name)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 624, in _load_from_module_spec
+    raise errors.ExtensionFailed(key, e) from e
+discord.ext.commands.errors.ExtensionFailed: Extension 'plugins.ptero' raised an error: CommandRegistrationError: The command admin is already an existing command or alias.
+[11/10/2020 13:51] INFO: Lancement du bot
+[11/10/2020 13:51] DEBUG: Pas d'arguments trouvés!
+[11/10/2020 15:03] INFO: Lancement du bot
+[11/10/2020 15:03] DEBUG: Pas d'arguments trouvés!
+[11/10/2020 15:04] INFO: Lancement du bot
+[11/10/2020 15:04] DEBUG: Pas d'arguments trouvés!
+[11/10/2020 15:05] INFO: Rebooting bot...
+[11/10/2020 15:05] INFO: Lancement du bot
+[11/10/2020 15:06] WARNING: Ignoring exception in command ^ptero resetcoords london OmniEU Sardine123 100 100 100 0:
+[11/10/2020 15:06] INFO: Rebooting bot...
+[11/10/2020 15:06] INFO: Lancement du bot
+[11/10/2020 15:06] WARNING: Ignoring exception in command ^ptero resetcoords london OmniEU Sardine123 100 100 100 0:
+[11/10/2020 15:06] INFO: Rebooting bot...
+[11/10/2020 15:06] INFO: Lancement du bot
+[11/10/2020 15:07] WARNING: Ignoring exception in command ^ptero resetcoords london OmniEU Sardine123 100 100 100 0:
+[11/10/2020 15:07] INFO: Module ptero reloaded
+[11/10/2020 15:18] INFO: Rebooting bot...
+[11/10/2020 15:18] INFO: Lancement du bot
+[11/10/2020 15:18] ERROR: 
+Failed to load extension ptero
+Traceback (most recent call last):
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 607, in _load_from_module_spec
+    spec.loader.exec_module(lib)
+  File "<frozen importlib._bootstrap_external>", line 779, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 916, in get_code
+  File "<frozen importlib._bootstrap_external>", line 846, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/leo/Desktop/Leo/.apps/FishBot.py/plugins/ptero.py", line 68
+    f node == "london":
+      ^
+SyntaxError: invalid syntax
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "start.py", line 128, in main
+    client.load_extension("plugins."+extension)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 664, in load_extension
+    self._load_from_module_spec(spec, name)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 610, in _load_from_module_spec
+    raise errors.ExtensionFailed(key, e) from e
+discord.ext.commands.errors.ExtensionFailed: Extension 'plugins.ptero' raised an error: SyntaxError: invalid syntax (ptero.py, line 68)
+[11/10/2020 15:19] INFO: Lancement du bot
+[11/10/2020 15:19] ERROR: 
+Failed to load extension ptero
+Traceback (most recent call last):
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 607, in _load_from_module_spec
+    spec.loader.exec_module(lib)
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/leo/Desktop/Leo/.apps/FishBot.py/plugins/ptero.py", line 15, in <module>
+    class Ptero(commands.Cog):
+  File "/Users/leo/Desktop/Leo/.apps/FishBot.py/plugins/ptero.py", line 67, in Ptero
+    async def resetspawn(self, ctx: commands.Context, node: str, server: str, player: str):
+TypeError: 'coroutine' object is not callable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "start.py", line 128, in main
+    client.load_extension("plugins."+extension)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 664, in load_extension
+    self._load_from_module_spec(spec, name)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 610, in _load_from_module_spec
+    raise errors.ExtensionFailed(key, e) from e
+discord.ext.commands.errors.ExtensionFailed: Extension 'plugins.ptero' raised an error: TypeError: 'coroutine' object is not callable
+[11/10/2020 15:21] INFO: Lancement du bot
+[11/10/2020 15:21] ERROR: 
+Failed to load extension ptero
+Traceback (most recent call last):
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 607, in _load_from_module_spec
+    spec.loader.exec_module(lib)
+  File "<frozen importlib._bootstrap_external>", line 783, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/leo/Desktop/Leo/.apps/FishBot.py/plugins/ptero.py", line 15, in <module>
+    class Ptero(commands.Cog):
+  File "/Users/leo/Desktop/Leo/.apps/FishBot.py/plugins/ptero.py", line 67, in Ptero
+    async def resetspawn(self, ctx: commands.Context, node: str, server: str, player: str):
+TypeError: 'coroutine' object is not callable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "start.py", line 128, in main
+    client.load_extension("plugins."+extension)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 664, in load_extension
+    self._load_from_module_spec(spec, name)
+  File "/Users/leo/Library/Python/3.8/lib/python/site-packages/discord/ext/commands/bot.py", line 610, in _load_from_module_spec
+    raise errors.ExtensionFailed(key, e) from e
+discord.ext.commands.errors.ExtensionFailed: Extension 'plugins.ptero' raised an error: TypeError: 'coroutine' object is not callable
+[11/10/2020 15:21] INFO: Lancement du bot
+[11/10/2020 15:21] DEBUG: Pas d'arguments trouvés!
+[11/10/2020 15:21] WARNING: Ignoring exception in command ^ptero resetspawn london OmniEU Sardine123:
+[11/10/2020 15:22] INFO: Module ptero reloaded
+[11/10/2020 15:22] WARNING: Ignoring exception in command ^ptero resetspawn london OmniEU Sardine123:
+[11/10/2020 15:22] INFO: Module ptero reloaded
+[11/10/2020 15:23] INFO: Module ptero reloaded
