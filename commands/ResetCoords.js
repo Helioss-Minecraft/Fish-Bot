@@ -29,7 +29,7 @@ exports.run =  async (client, message, args, level) => {
     //   return false;
     // }
 
-    if (!message.member.roles.cache.find(role => role.name === 'Staff')) { message.channel.send("You are not authorized to to this!"); return; }
+    //if (!message.member.roles.cache.find(role => role.name === 'Staff')) { message.channel.send("You are not authorized to to this!"); return; }
     message.channel.send("Resetting player " + player + " to coords: " + xCoord + ", " + yCoord + ", " + zCoord + " " + "in dimension " + dim + "...")
     exec("python3 resetpos.py " + node + " " + server + " " + player + " " + xCoord + " " + yCoord + " " + zCoord + " " + dim, (error, stdout, stderr) => {
       if (error) {
