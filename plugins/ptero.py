@@ -40,9 +40,9 @@ class Ptero(commands.Cog):
         await ctx.send("Resetting player " + player + " to coords: " + str(x) + ", " + str(y) + ", " + str(z) + " " + "in dimension " + str(dim) + "...")
         if node == "london":
             serverid = utils.londonids[server]
-        elif args == "canada":
+        elif node == "canada":
             serverid = utils.canadaids[server]
-        elif args == "germany":
+        elif node == "germany":
             serverid = utils.germanyids[server]
         uuid = utils.getUUID(player)
         if uuid:
