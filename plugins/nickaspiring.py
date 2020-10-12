@@ -56,6 +56,13 @@ class NickAspiring(commands.Cog):
         self.bot.database.commit()
         c.close()
 
+    def insertNick(self, name: str):
+        c = self.bot.database.cursor()
+        c.execute(f"INSERT INTO aspiringnames (guild, name) VALUES (?, ?)", (602313280702382106, name))
+        self.nicknames.append(name)
+        self.bot.database.commit()
+        c.close()
+
 
     def getNicks(self):
         c = self.bot.database.cursor()
