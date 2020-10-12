@@ -42,7 +42,7 @@ class LinkUsernames(commands.Cog):
         c = self.bot.database.cursor()
         for row in c.execute('SELECT * FROM usernames WHERE discordid=\'' + str(id) + '\';'):
             if row:
-                return row[1]
+                return row[2]
             else:
                 return False
 
