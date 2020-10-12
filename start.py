@@ -146,6 +146,7 @@ def main():
             print("Connecté sur "+str(len(client.guilds))+" serveurs")
         print(time.strftime("%d/%m  %H:%M:%S"))
         print('------')
+        self.bot.get_cog("NickAspiring").nick.start()
         await asyncio.sleep(2)
 
     client.add_listener(on_ready)

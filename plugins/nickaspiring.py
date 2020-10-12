@@ -47,7 +47,6 @@ class NickAspiring(commands.Cog):
                              "Polyethylene-Naphthalate",
                              "Polyethylene-terephthalate)",
                              "Polyhexamethylene-Adipamide",)
-        self.nick.start()
 
     def setDefaultNicks(self, names: tuple):
         c = self.bot.database.cursor()
@@ -83,7 +82,7 @@ class NickAspiring(commands.Cog):
             for member in guild.members:
                 if member.id == 642430396683911187:
                     aspiring = member
-        await aspiring.edit(nick="Aspiring " + self.nicknames[random.randint(0, len(nicknames) - 1)])
+        await aspiring.edit(nick="Aspiring " + self.nicknames[random.randint(0, len(self.nicknames) - 1)])
 
 def setup(bot):
     bot.add_cog(NickAspiring(bot))
