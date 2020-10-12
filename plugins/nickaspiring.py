@@ -15,7 +15,9 @@ class NickAspiring(commands.Cog):
         self.bot = bot
         self.file = "nickaspiring"
         self._last_result = None
-        self.nicknames = ("Polypropylene",
+        self.nicks = dict()
+        self.getNicks()
+        self.defaultnicknames = ("Polypropylene",
                              "Polyvinyl-Chloride",
                              "Polyvinylidenechloride",
                              "Polyacrylonitrile",
@@ -55,10 +57,16 @@ class NickAspiring(commands.Cog):
         c.close()
 
 
+    def getNicks(self):
+        c = self.bot.database.cursor()
+        for row in c.execute('SELECT * FROM aspiringnames'):
+            self.nicknames.append(row[1])
+        c.close()
+
     @tasks.loop(hours=4)
     async def nick(self):
         member = self.bot.get_user("642430396683911187")
-        member.edit(nick="Aspiring " + nicknames[random.randint(0, len(nicknames) - 1)])
+        member.edit(nick="Aspiring " + self.nicknames[random.randint(0, len(nicknames) - 1)])
 
 def setup(bot):
     bot.add_cog(NickAspiring(bot))
