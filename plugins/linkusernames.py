@@ -50,7 +50,7 @@ class LinkUsernames(commands.Cog):
     async def link(self, ctx: commands.Context, ign: str):
         """Link your discord username to your IGN"""
         self.db_add_username(ctx.author, ign)
-        await ctx.send("Done! Added " + ctx.author + " as " + ign)
+        await ctx.send("Done! Added " + ctx.author.name + "#" + ctx.author.discriminator + " as " + ign)
 
     @commands.command(name='whoign')
     async def whoisign(self, ctx: commands.Context, ign: str):
