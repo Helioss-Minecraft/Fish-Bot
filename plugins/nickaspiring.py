@@ -77,9 +77,12 @@ class NickAspiring(commands.Cog):
         c.close()
 
     @tasks.loop(hours=4)
-    async def nick(self, ctx: commands.Context):
-        member = ctx.message.guild.get_member(642430396683911187)
-        await member.edit(nick="Aspiring " + self.nicknames[random.randint(0, len(nicknames) - 1)])
+    async def nick(self):
+        server = self.bot.client.get_server(602313280702382106)
+        for member in server.members:
+            if member.id == 642430396683911187:
+                aspiring = member
+        await aspiring.edit(nick="Aspiring " + self.nicknames[random.randint(0, len(nicknames) - 1)])
 
 def setup(bot):
     bot.add_cog(NickAspiring(bot))
