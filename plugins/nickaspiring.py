@@ -47,6 +47,7 @@ class NickAspiring(commands.Cog):
                              "Polyethylene-Naphthalate",
                              "Polyethylene-terephthalate)",
                              "Polyhexamethylene-Adipamide",)
+        self.nick.start()
 
     def setDefaultNicks(self, names: tuple):
         c = self.bot.database.cursor()
@@ -82,4 +83,3 @@ class NickAspiring(commands.Cog):
 
 def setup(bot):
     bot.add_cog(NickAspiring(bot))
-    nick.start()
