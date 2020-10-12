@@ -15,7 +15,7 @@ class NickAspiring(commands.Cog):
         self.bot = bot
         self.file = "nickaspiring"
         self._last_result = None
-        self.nicks = dict()
+        self.nicknames = dict()
         self.getNicks()
         self.defaultnicknames = ("Polypropylene",
                              "Polyvinyl-Chloride",
