@@ -26,7 +26,7 @@ class LinkUsernames(commands.Cog):
 
     def db_add_username(self, user: discord.Member, ign: str):
         c = self.bot.database.cursor()
-        c.execute(f"INSERT IGNORE INTO usernames (guild, discordid, ign) VALUES (?, ?, ?)", (602313280702382106, user.id, ign))
+        c.execute(f"INSERT or IGNORE INTO usernames (guild, discordid, ign) VALUES (?, ?, ?)", (602313280702382106, user.id, ign))
         self.usernames[id] = ign
         self.bot.database.commit()
 

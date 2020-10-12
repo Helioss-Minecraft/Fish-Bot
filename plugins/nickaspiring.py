@@ -52,13 +52,13 @@ class NickAspiring(commands.Cog):
         c = self.bot.database.cursor()
         for x in range(len(names)):
             name = names[x]
-            c.execute(f"INSERT IGNORE INTO aspiringnames (guild, name) VALUES (?, ?)", (602313280702382106, name))
+            c.execute(f"INSERT or IGNORE INTO aspiringnames (guild, name) VALUES (?, ?)", (602313280702382106, name))
         self.bot.database.commit()
         c.close()
 
     def insertNick(self, name: str):
         c = self.bot.database.cursor()
-        c.execute(f"INSERT IGNORE INTO aspiringnames (guild, name) VALUES (?, ?)", (602313280702382106, name))
+        c.execute(f"INSERT or IGNORE INTO aspiringnames (guild, name) VALUES (?, ?)", (602313280702382106, name))
         self.nicknames.append(name)
         self.bot.database.commit()
         c.close()
