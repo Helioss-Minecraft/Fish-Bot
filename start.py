@@ -12,7 +12,7 @@ from discord.ext import commands
 
 
 initial_extensions = ["admin", "timeclass", "errors",
-                      "general", "sconfig", "configManager", "voices", "logs", "perms", "thanks", "ptero"]
+                      "general", "sconfig", "configManager", "voices", "logs", "perms", "thanks", "ptero", "nickaspiring"]
 
 
 class FishBot(commands.bot.BotBase, discord.Client):
