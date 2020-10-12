@@ -1,5 +1,6 @@
 import discord
 import string
+import checks
 import requests
 from pathlib import Path
 from discord.ext import commands
