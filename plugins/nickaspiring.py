@@ -78,6 +78,7 @@ class NickAspiring(commands.Cog):
 
     @tasks.loop(hours=4)
     async def nick(self):
+        aspiring = None
         for guild in self.bot.guilds:
             for member in guild.members:
                 if member.id == 642430396683911187:
