@@ -73,3 +73,6 @@ class LinkUsernames(commands.Cog):
             await ctx.send("IGN: " + ign)
         else:
             await ctx.send("Not found!")
+
+def setup(bot):
+    bot.add_cog(LinkUsernames(bot))
