@@ -26,25 +26,25 @@ class LinkUsernames(commands.Cog):
 
     def db_add_username(self, user: discord.Member, ign: str):
         c = self.bot.database.cursor()
-        c.execute(f"INSERT INTO usernames (guild, discordid, ign) VALUES (?, ?, ?)", (602313280702382106, user.id, ign))
+        c.execute(f"INSERT IGNORE INTO usernames (guild, discordid, ign) VALUES (?, ?, ?)", (602313280702382106, user.id, ign))
         self.usernames[id] = ign
         self.bot.database.commit()
 
     def db_query_ign(self, ign: str):
         c = self.bot.database.cursor()
-        row = c.execute('SELECT * FROM usernames WHERE ign=\'' + ign + '\';')
-        if row:
-            return row[1]
-        else:
-            return False
+        for row in c.execute('SELECT * FROM usernames WHERE ign=\'' + ign + '\';'):
+            if row:
+                return row[1]
+            else:
+                return False
 
     def db_query_d(self, id: str):
         c = self.bot.database.cursor()
-        row = c.execute('SELECT * FROM usernames WHERE discordid=\'' + str(id) + '\';')
-        if row:
-            return row[1]
-        else:
-            return False
+        for row in c.execute('SELECT * FROM usernames WHERE discordid=\'' + str(id) + '\';'):
+            if row:
+                return row[1]
+            else:
+                return False
 
     @commands.command(name='link')
     async def link(self, ctx: commands.Context, ign: str):
