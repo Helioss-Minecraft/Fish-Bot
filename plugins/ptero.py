@@ -58,6 +58,7 @@ class Ptero(commands.Cog):
             nbtfile.root["Pos"][2] = z
             nbtfile.root["Dimension"] = Int(dim)
             nbtfile.save()
+            await ctx.send("New coords: " + str(nbtfile.root["Pos"][0]) + ", " + str(nbtfile.root["Pos"][1]) + ", " + str(nbtfile.root["Pos"][2]) + " in dim " + str(nbtfile.root["Dimension"]))
             print("Uploading to server...")
             utils.upload(dir_path + "/" + uuid + ".dat", serverid + "/world/playerdata/" + uuid + ".dat", node)
             print("Uploaded!")
@@ -98,6 +99,7 @@ class Ptero(commands.Cog):
             nbtfile.root["Pos"][2] = Double(zCoord)
             nbtfile.root["Dimension"] = Int(0)
             nbtfile.save()
+            await ctx.send("New coords: " + str(nbtfile.root["Pos"][0]) + ", " + str(nbtfile.root["Pos"][1]) + ", " + str(nbtfile.root["Pos"][2]) + " in dim " + str(nbtfile.root["Dimension"]))
             print("Uploading to server...")
             utils.upload(dir_path + "/" + uuid + ".dat", serverid + "/world/playerdata/" + uuid + ".dat", node)
             print("Uploaded!")
