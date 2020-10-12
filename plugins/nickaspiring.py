@@ -52,5 +52,5 @@ class NickAspiring(commands.Cog):
         member = self.bot.get_user("642430396683911187")
         member.edit(nick="Aspiring " + nicknames[random.randint(0, len(nicknames) - 1)])
 
-    def setup(bot):
-        bot.add_cog(NickAspiring(bot))
+def setup(bot):
+    bot.add_cog(NickAspiring(bot))
