@@ -78,7 +78,7 @@ class NickAspiring(commands.Cog):
 
     @tasks.loop(hours=4)
     async def nick(self):
-        server = self.bot.client.get_server(602313280702382106)
+        server = self.bot.get_guild(602313280702382106)
         for member in server.members:
             if member.id == 642430396683911187:
                 aspiring = member
