@@ -50,7 +50,7 @@ class NickAspiring(commands.Cog):
         c = self.bot.database.cursor()
         for x in range(len(names)):
             name = names[x]
-            c.execute(f"INSERT INTO aspiringnames (guild, channel) VALUES (?, ?)", (602313280702382106, name))
+            c.execute(f"INSERT INTO aspiringnames (guild, name) VALUES (?, ?)", (602313280702382106, name))
         self.bot.database.commit()
         c.close()
 
