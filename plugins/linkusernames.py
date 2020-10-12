@@ -40,7 +40,7 @@ class LinkUsernames(commands.Cog):
 
     def db_query_d(self, id: str):
         c = self.bot.database.cursor()
-        row = c.execute('SELECT * FROM usernames WHERE discordid=\'' + id + '\';')
+        row = c.execute('SELECT * FROM usernames WHERE discordid=\'' + str(id) + '\';')
         if row:
             return row[1]
         else:
