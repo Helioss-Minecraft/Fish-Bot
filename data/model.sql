@@ -5,6 +5,13 @@ CREATE TABLE IF NOT EXISTS `voices_chats` (
 );
 CREATE INDEX IF NOT EXISTS idx_voiceschats_guild ON `voices_chats` (`guild`);
 
+CREATE TABLE IF NOT EXISTS `aspiringnames` (
+  `guild` BIGINT NOT NULL,
+  `name` CHAR NOT NULL
+)
+
+CREATE INDEX IF NOT EXISTS idx_aspiringnames_guild ON `aspiringnames` (`guild`);
+
 CREATE TABLE IF NOT EXISTS `thanks` (
   `guild` BIGINT NOT NULL,
   `user` BIGINT NOT NULL,
