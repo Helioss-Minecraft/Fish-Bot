@@ -12,6 +12,14 @@ CREATE TABLE IF NOT EXISTS `aspiringnames` (
 
 CREATE INDEX IF NOT EXISTS idx_aspiringnames_guild ON `aspiringnames` (`guild`);
 
+CREATE TABLE IF NOT EXISTS `usernames` (
+  `guild` BIGINT NOT NULL,
+  `discordid` BIGINT NOT NULL,
+  `ign` CHAR NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_usernames_guild ON `usernames` (`guild`);
+
 CREATE TABLE IF NOT EXISTS `thanks` (
   `guild` BIGINT NOT NULL,
   `user` BIGINT NOT NULL,
