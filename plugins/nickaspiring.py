@@ -63,6 +63,11 @@ class NickAspiring(commands.Cog):
         self.bot.database.commit()
         c.close()
 
+    @commands.command(name='addnick')
+    async def addnick(self, ctx: commands.Context, nick: str):
+        self.insertNick(nick)
+        await ctx.send("Done! Added " + nick + " to the database.")
+
 
     def getNicks(self):
         c = self.bot.database.cursor()
