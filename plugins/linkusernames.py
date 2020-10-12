@@ -26,7 +26,7 @@ class LinkUsernames(commands.Cog):
 
     def db_add_username(self, user: discord.Member, ign: str):
         c = self.bot.database.cursor()
-        c.execute(f"INSERT INTO aspiringnames (guild, discordid, ign) VALUES (?, ?, ?)", (602313280702382106, user.id, ign))
+        c.execute(f"INSERT INTO usernames (guild, discordid, ign) VALUES (?, ?, ?)", (602313280702382106, user.id, ign))
         self.usernames[discordid] = ign
         self.bot.database.commit()
 
