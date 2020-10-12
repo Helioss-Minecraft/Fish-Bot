@@ -13,7 +13,7 @@ class ExtLoader(commands.Cog):
         self.file = "extloader"
         self._last_result = None
 
-        self.path = "./plugins/ext/"
+        self.path = "./plugins/"
         extp = Path(self.path)
 
         if not extp.exists:
