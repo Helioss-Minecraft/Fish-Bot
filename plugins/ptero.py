@@ -52,6 +52,7 @@ class Ptero(commands.Cog):
             dir_path = cwd = os.getcwd()
             nbtfile = nbtlib.load(dir_path + "/" + uuid + ".dat")
             print("Resetting " + player + "\'s coordinates to " + str(x) + "," + str(y) + "," + str(z) + "...")
+            await ctx.send("Original coords: " + str(nbtfile.root["Pos"][0]) + ", " + str(nbtfile.root["Pos"][1]) + ", " + str(nbtfile.root["Pos"][2]) + " in dim " + str(nbtfile.root["Dimension"]))
             nbtfile.root["Pos"][0] = x
             nbtfile.root["Pos"][1] = y
             nbtfile.root["Pos"][2] = z
@@ -91,6 +92,7 @@ class Ptero(commands.Cog):
             zCoord = worldfile.root["Data"]["SpawnZ"]
 
             print(("Resetting " + username + "\'s coordinates to " + str(xCoord) + "," + str(yCoord) + "," + str(zCoord) + "..."))
+            await ctx.send("Original coords: " + str(nbtfile.root["Pos"][0]) + ", " + str(nbtfile.root["Pos"][1]) + ", " + str(nbtfile.root["Pos"][2]) + " in dim " + str(nbtfile.root["Dimension"]))
             nbtfile.root["Pos"][0] = Double(xCoord)
             nbtfile.root["Pos"][1] = Double(yCoord)
             nbtfile.root["Pos"][2] = Double(zCoord)
